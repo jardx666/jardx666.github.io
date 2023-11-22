@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
             // Llamada para mostrar u ocultar la caja de texto al abrir el modal
             mostrarOcultarCajaTexto();
             break;
-          case "Acerca de":
+          case "Visualización de datos":
             // Redirige a la página acerca-de.html
-            
+            window.location.href="visualizador.html";
             break;
           // Agrega más casos según las opciones de tu menú
           // ...
