@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Espera a que el contenido del DOM esté completamente cargado
   
     // Obtén todas las etiquetas <a> dentro de elementos con la clase "nav-link"
-    var menuItems = document.querySelectorAll(".nav-link");
+    var menuItems = document.querySelectorAll(".navegacion__enlace");
   
     // Agrega un controlador de clic a cada elemento del menú
     menuItems.forEach(function(item) {
@@ -23,6 +23,10 @@ document.addEventListener("DOMContentLoaded", function() {
           case "Visualización de datos":
             // Redirige a la página acerca-de.html
             window.location.href="visualizador.html";
+            break;
+          case "Contacto":
+            // Redirige a la página acerca-de.html
+            window.location.href="contacto.html";
             break;
           // Agrega más casos según las opciones de tu menú
           // ...
