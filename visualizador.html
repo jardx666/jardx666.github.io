@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visualizador</title>
   <!-- Enlace a Bootstrap CSS desde CDN -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <script src="js/scripts.js"></script>
 </head>
+
 <body>
 
+  <header class="header">
+    <div class="contenedor">
+      <div class="barra">
+        <a href="index.html" class="logo">
+          <h1 class="logo__nombre no-margin centrar-texto">FaceFlow<span class="logo__bold"> CUNorte</span>
+          </h1>
+        </a>
+
+        <nav class="navegacion">
+          <a href="#" class="navegacion__enlace">Registro</a>
+          <a href="#" class="navegacion__enlace">Visualización de datos</a>
+          <a href="#" class="navegacion__enlace">Personas</a>
+          <a href="contacto.html" class="navegacion__enlace">Contacto</a>
+        </nav>
+      </div>
+    </div>
+    <div class="header__texto">
+      <h2 class="no-margin">Sistema de Reconocimiento Facial</h2>
+    </div>
+  </header>
+
   <div class="container mt-4">
-    <h2>Registro de Entradas y Salidas</h2>
+    <h1>Registro de Entradas y Salidas</h1>
 
     <table class="table">
       <thead>
@@ -41,10 +67,95 @@
     </table>
 
   </div>
+  <footer class="footer">
+    <div class="contenedor">
+      <div class="barra">
+        <a href="index.html" class="logo">
+          <h1 class="logo__nombre no-margin centrar-texto">FaceFlow<span class="logo__bold"> CUNorte</span>
+          </h1>
+        </a>
+        <nav class="navegacion">
+          <a href="#" class="navegacion__enlace">Registro</a>
+          <a href="#" class="navegacion__enlace">Visualización de datos</a>
+          <a href="#" class="navegacion__enlace">Personas</a>
+          <a href="contacto.html" class="navegacion__enlace">Contacto</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!--modal de Registro de Usuario-->
+  <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="modalRegistroLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalRegistroLabel">Registro</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="nombre">Nombre:</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+            </div>
+            <div class="form-group">
+              <label>Ocupación:</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="ocupacion" id="opcionEstudiante" value="estudiante">
+                <label class="form-check-label" for="opcionEstudiante">Estudiante</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="ocupacion" id="opcionAdministrativo"
+                  value="administrativo">
+                <label class="form-check-label" for="opcionAdministrativo">Administrativo</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="ocupacion" id="opcionInvitado" value="invitado">
+                <label class="form-check-label" for="opcionInvitado">Invitado</label>
+              </div>
+            </div>
+            <!-- Caja de texto para estudiante -->
+            <div class="form-group" id="cajaCodigoEstudiante" style="display: none;">
+              <label for="codigoEstudiante">Código de Estudiante:</label>
+              <input type="text" class="form-control" id="codigoEstudiante"
+                placeholder="Ingrese el código de estudiante">
+            </div>
+            <div class="form-group" id="cajaCarreraEstudiante" style="display: none;">
+              <label for="carreraEstudiante">Carrera:</label>
+              <input type="text" class="form-control" id="carreraEstudiante"
+                placeholder="Ingrese la carrera del estudiante">
+            </div>
+            <!-- Caja de texto para invitados -->
+            <div class="form-group" id="cajaInvitadosInicio" style="display: none;">
+              <label for="fechaInicioEstancia">Fecha de inicio de la estancia:</label>
+              <input type="date" class="form-control" id="fechaInicioEstancia">
+            </div>
+            <div class="form-group" id="cajaInvitadosFin" style="display: none;">
+              <label for="fechaFinEstancia">Fecha de finalización de la estancia:</label>
+              <input type="date" class="form-control" id="fechaFinEstancia">
+            </div>
+            <!-- Cargar imagen-->
+            <div class="form-group">
+              <label for="imagen">Cargar Imagen del rostro (jpg, jpeg, png):</label>
+              <input type="file" class="form-control-file" id="imagen" accept=".jpg, .jpeg, .png">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts de Bootstrap (jQuery y Popper.js) desde CDN -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
+
 </html>
